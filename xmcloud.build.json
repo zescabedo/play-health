@@ -44,6 +44,14 @@
       "type": "sxa",
       "buildCommand": "build",
       "runCommand": "next:start"
+    },
+    "play-health": {
+      "path": "./headapps/nextjs",
+      "nodeVersion": "22.11.0",
+      "enabled": true,
+      "type": "content",
+      "buildCommand": "npm run build",
+      "runCommand": "npm run start"
     }
   },
   "postActions": {
