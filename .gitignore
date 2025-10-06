@@ -1,4 +1,7 @@
-﻿# may contain OAuth secrets, do not commit
+﻿# --------------------------
+# Sitecore-related ignores
+# --------------------------
+# may contain OAuth secrets, do not commit
 .sitecore/user.json
 
 # NuGet cache for Sitecore CLI
@@ -11,9 +14,43 @@
 *.itempackage
 *.sicpackage
 
-#Ignore thumbnails created by Windows
+# --------------------------
+# Node.js / Next.js / Content SDK ignores
+# --------------------------
+# Node dependencies
+node_modules/
+
+# Build outputs
+.next/
+out/
+dist/
+
+# Local environment files
+.env
+.env.local
+.env.development
+.env.production
+.env.remote
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Cache
+.cache/
+.vercel/
+coverage/
+
+# Editor & system files
+.DS_Store
 Thumbs.db
-#Ignore files built by Visual Studio
+
+# --------------------------
+# Visual Studio / .NET ignores
+# --------------------------
 *.obj
 *.exe
 *.pdb
@@ -31,20 +68,17 @@ Thumbs.db
 *.cache
 *.ilk
 *.log
-[Bb]in
+[Bb]in/
 [Dd]ebug*/
-*.lib
-*.sbr
-obj/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
 .vs/
-#Nuget packages folder
+#NuGet packages folder
 packages/
 
-#Ignore system files
-.DS_Store
-
-# VS Code settings
+# --------------------------
+# IDE settings
+# --------------------------
 .vscode/
+.idea/
