@@ -5,6 +5,7 @@
       "components/*": ["src/components/*"],
       "lib/*": ["src/lib/*"],
       "temp/*": ["src/temp/*"],
+      "@/*": ["src/*"],
       "assets/*": ["src/assets/*"],
     },
     "target": "es5",

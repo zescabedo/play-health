@@ -10,10 +10,10 @@ import {
 import { extractPath, handleEditorFastRefresh } from '@sitecore-content-sdk/nextjs/utils';
 import { isDesignLibraryPreviewData } from '@sitecore-content-sdk/nextjs/editing';
 import sites from '.sitecore/sites.json';
-import components from '.sitecore/component-map';
 import scConfig from 'sitecore.config';
 import client from 'lib/sitecore-client';
 import Providers from 'src/Providers';
+import componentMap from '.sitecore/component-map';
 
 const SitecorePage = ({ page, notFound, componentProps }: SitecorePageProps): JSX.Element => {
   useEffect(() => {
@@ -89,7 +89,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         site: page.siteName,
         locale: page.locale,
       }),
-      componentProps: await client.getComponentData(page.layout, context, components),
+      componentProps: await client.getComponentData(page.layout, context, componentMap),
     }
   }
   return {

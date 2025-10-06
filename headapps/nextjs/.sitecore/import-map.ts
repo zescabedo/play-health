@@ -3,17 +3,69 @@
 import { combineImportEntries, defaultImportEntries } from '@sitecore-content-sdk/nextjs/codegen';
 // end of built-in imports
 
+import { Link, Text, useSitecore, Placeholder, RichText, NextImage, withDatasourceCheck, CdpHelper } from '@sitecore-content-sdk/nextjs';
+import { useState, useEffect } from 'react';
+import React from 'react';
+import * as React_7214d18997ee864dd178de7b3a8430f6783e8b89 from 'react';
+import { SafeRichText } from 'src/components/RichText';
+import { Button } from '@/components/ui/button';
+import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import Head from 'next/head';
 import client from 'lib/sitecore-client';
 import Image from 'next/image';
 import * as FEAAS from '@sitecore-feaas/clientside/react';
 import nextConfig from 'next.config';
-import { CdpHelper, useSitecore } from '@sitecore-content-sdk/nextjs';
-import { useEffect } from 'react';
 import { pageView } from '@sitecore-cloudsdk/events/browser';
 import config from 'sitecore.config';
 
 const importMap = [
+  {
+    module: '@sitecore-content-sdk/nextjs',
+    exports: [
+      { name: 'Link', value: Link },
+      { name: 'Text', value: Text },
+      { name: 'useSitecore', value: useSitecore },
+      { name: 'Placeholder', value: Placeholder },
+      { name: 'RichText', value: RichText },
+      { name: 'NextImage', value: NextImage },
+      { name: 'withDatasourceCheck', value: withDatasourceCheck },
+      { name: 'CdpHelper', value: CdpHelper },
+    ]
+  },
+  {
+    module: 'react',
+    exports: [
+      { name: 'useState', value: useState },
+      { name: 'useEffect', value: useEffect },
+      { name: 'default', value: React },
+      { name: '*', value: React_7214d18997ee864dd178de7b3a8430f6783e8b89 },
+    ]
+  },
+  {
+    module: 'src/components/RichText',
+    exports: [
+      { name: 'SafeRichText', value: SafeRichText },
+    ]
+  },
+  {
+    module: '@/components/ui/button',
+    exports: [
+      { name: 'Button', value: Button },
+    ]
+  },
+  {
+    module: 'next/link',
+    exports: [
+      { name: 'default', value: Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 },
+    ]
+  },
+  {
+    module: 'lucide-react',
+    exports: [
+      { name: 'ArrowRight', value: ArrowRight },
+    ]
+  },
   {
     module: 'next/head',
     exports: [
@@ -42,19 +94,6 @@ const importMap = [
     module: 'next.config',
     exports: [
       { name: 'default', value: nextConfig },
-    ]
-  },
-  {
-    module: '@sitecore-content-sdk/nextjs',
-    exports: [
-      { name: 'CdpHelper', value: CdpHelper },
-      { name: 'useSitecore', value: useSitecore },
-    ]
-  },
-  {
-    module: 'react',
-    exports: [
-      { name: 'useEffect', value: useEffect },
     ]
   },
   {
