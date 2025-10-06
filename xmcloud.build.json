@@ -50,8 +50,8 @@
       "nodeVersion": "22.11.0",
       "enabled": true,
       "type": "content",
-      "buildCommand": "npm run build",
-      "runCommand": "npm run start"
+      "buildCommand": "build",
+      "runCommand": "next:start"
     }
   },
   "postActions": {
